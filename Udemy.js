@@ -39,7 +39,7 @@ const k = 'Vlad' // Примитив
 
 
 // ПОРЯДОК СВОЙСТВ НЕ ИМЕЕТ ЗНАЧЕНИЯ!!!
-const myCity = {
+const myCity1 = {
     city: 'New York',
     popular: true,
     country: 'USA'
@@ -47,18 +47,192 @@ const myCity = {
 
 // ПОЛУЧАЕМ ДОСТУП К ОБЬЕКТУ!!!
 
-console.log(myCity.city) // New York
+console.log(myCity1.city) // New York
 // Точечная запись
-console.log(myCity.popular) // true
+console.log(myCity1.popular) // true
 // Точечная запись
 
-// ИЗМЕНЕНИЕ ЗНАЧЕНИЙ СВОЙСТВА ОБЬЕКТА!
+//////////////////////////////  ИЗМЕНЕНИЕ ЗНАЧЕНИЙ СВОЙСТВА ОБЬЕКТА!  //////////////////////////////
 
-const myCity1 ={
+const myCity ={
     city: 'New York'
 }
 
-myCity1.city = 'Las Vegas'
+myCity.city = 'Las Vegas'
 // Изменяем в свойстве city значение 'New York' НА 'Las Vegas'.
 
-console.log(myCity1) // { city: 'Las Vegas' }
+console.log(myCity) // { city: 'Las Vegas' }
+
+
+//////////////////////////////  ИЗМЕНЕНИЕ ЗНАЧЕНИЙ СВОЙСТВА ОБЬЕКТА!  //////////////////////////////
+
+// Переменная myCity ТИПА ОБЬЕКТ.
+const myCity ={
+    city: 'New York'
+}
+// В const находится ССЫЛКА на обьект myCity, поэтому мы можем менять его свойства и значения.
+// Происходит мутация данного обьекта. Нужно делать копию обьекта и мутировать КОПИЮ обьекта а не ОРИГИНАЛ!
+
+myCity.popular = true
+// Добавили с помощью точечной записи в обьект свойство popular:  значение true.
+
+console.log(myCity)
+// { city: 'New York', popular: true}
+
+myCity.country = 'USA'
+// Добавили с помощью точечной записи в обьект свойство country:  значение 'USA'.
+
+console.log(myCity)
+// { city: 'New York', popular: true, country: 'USA' }
+
+
+
+//////////////////////////////  УДАЛЕНИЕ СВОЙСТВ ОБЬЕКТА оператор delete!  //////////////////////////////
+
+delete myCity.country
+// Удалили свойство country
+
+console.log(myCity)
+
+
+//////////////////////////////  ДОСТУП К ЗНАЧЕНИЮ СВОЙСТВА С ИСПОЛЬЗОВАНИЕМ СКОБОК []  //////////////////////////////
+
+
+const myCity ={
+    city: 'New York'
+}
+
+myCity['popular'] = true
+// Добавили в обьектс помощью [] свойство popular:  значение true.
+
+console.log(myCity)
+// { city: 'New York', popular: true }
+
+
+const countryPropertyName = 'country'
+// Поместили в переменную свойство 'country' для обьекта.
+
+myCity[countryPropertyName] = 'USA'
+// Присвоили к свойству 'country' значение 'USA'
+// Добавили country: 'USA' свойство хранится в переменной countryPropertyName.
+// JS перед созданием свойства посмотрит в переменную countryPropertyName, после чего создаст свойство которое хранится в переменной countryPropertyName, далее присвоили значение свойства = 'USA'.
+// Есди нужно создать свойство из перменной используем скобки [] в остальных случаях используем точечную запись.
+
+console.log(myCity)
+// { city: 'New York', popular: true, country: 'USA' }
+
+// ОТЛИЧИЕ СКОБОЧНОЙ ЗАПИСИ ОТ ТОЧЕЧНОЙ, 
+// В ТО ЧТО В CКОБОЧНОЙ ЗАПИСИ [] МОЖНО ИСПОЛЬЗОВАТЬ ЛЮБОЕ ВЫРАЖЕНИЕ!
+
+// Пример 2
+
+const myCity ={
+    name: 'Vlad',
+    age: 25
+}
+
+const myCountry = 'city'
+
+console.log(myCity)
+// { name: 'Vlad', age: 15 }
+
+
+myCity[myCountry] = 'USA'
+
+console.log(myCity)
+// { name: 'Vlad', age: 15, city: 'USA' }
+
+
+ //////////////////////////////  В JS МОГУТ БЫТЬ ВЛОЖЕННЫЕ СВОЙСТВА КОТОРЫЕ СОДЕРЖАТ ВЛОЖЕННЫЕ ОБЬЕКТЫ!  //////////////////////////////
+
+
+ const myCity = {
+    city: 'New York',
+    info: {
+        isPopular: true,
+        country: 'USA'
+    }
+ }
+
+ console.log(myCity.info.isPopular) // true 
+// Точечная запись, переходим во вложенный обьект и выводим значение свойства isPopular.
+
+
+delete myCity.info.isPopular
+ // Получаем доступ в вложенный обьекта info и удаляем его с помощью оператора delete. 
+ // Можно через скобочную [] запись delete myCity.info['isPopular']
+ // Скобочную запись используем когда в скобках должно быть выражение, допустим название переменной.
+
+
+ console.log(myCity)
+ // { city: 'New York', info: { country: 'USA' } }
+
+
+ //////////////////////////////  ИСПОЛЬЗОВАНИЕ ПЕРЕМЕННЫХ ПРИ ФОРМИРОВАНИИ ОБЪЕКТА! //////////////////////////////
+
+ const name = 'Vlad'
+ const postsQty = 23
+ // Используем название перменных как выражение для свойст обьекта.
+
+ const userProfile = { 
+    name: name,
+    postsQty: postsQty,
+    hasSignedAgreement: false
+ }
+
+// Сначала JS получит результат того или иного свойства а после этого этот результат присвоится тому или иному свойству обьекта.
+
+// Сокращенные свойства рекомендуется размещать в начале обьекта, чтобы было ясно где переменные в которых хранятся значения.
+
+// const userProfile = { 
+//     name,
+//     postsQty,
+//     hasSignedAgreement: false
+//  }
+ 
+// Сокращенный формат записи когда название переменной где находится значение свойства совподвет с название свойства!
+
+// Обычно часть значений уже известно до формирования объекта, такие значения можно поместить в переменные. Допустим переменная password где будет находится пароль.
+
+
+////////////////////////////// ГЛОБАЛЬНЫЕ ОБЪЕКТЫ! //////////////////////////////
+
+
+console // Браузер глобальный обьект.
+
+window.console // Hrome глобальный обьект.
+
+global.console // Node.JS глобальный обьект.
+
+globalThis // Унифицированный глобальный обьект.
+
+
+// СВОЙСТВО ГЛОБАЛЬНЫХ ОБЬЕКТОВ 
+
+window.console
+
+global.console
+
+console.log('Hello')
+
+window.console.log('Hello')
+
+global.console.log('Hello')
+// Одно и тоже!
+
+
+
+//////////////////////////////  МЕТОД - СВОЙСТВО ОБЪЕКТА ЗНАЧЕНИЕ КОТОРОГО - ФУНКЦИЯ! //////////////////////////////
+
+// Методы - свойства обьекта, которые содержат функции.
+
+const myCity = {
+    city: 'New York',
+    cityGreeting: function () {
+        console.log('Greetings!!!')
+    }
+    
+}
+// В данном примере cityGreeting это метод. Вот city это просто свойство так как его значение не является функцией!!!
+myCity.cityGreeting()
+
