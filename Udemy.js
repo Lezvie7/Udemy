@@ -125,7 +125,7 @@ const countryPropertyName = 'country'
 // Поместили в переменную свойство 'country' для обьекта.
 
 myCity[countryPropertyName] = 'USA'
-// Присвоили к свойству 'country' значение 'USA'
+// myCity[countryPropertyName] = 'USA' это мы так присвоили к свойству 'country' значение 'USA'
 // Добавили country: 'USA' свойство хранится в переменной countryPropertyName.
 // JS перед созданием свойства посмотрит в переменную countryPropertyName, после чего создаст свойство которое хранится в переменной countryPropertyName, далее присвоили значение свойства = 'USA'.
 // Есди нужно создать свойство из перменной используем скобки [] в остальных случаях используем точечную запись.
