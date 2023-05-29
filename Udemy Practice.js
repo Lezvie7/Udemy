@@ -214,3 +214,51 @@ const testNew1 = test55.reduce((acc, element) => {
 
 console.log(testNew1)
 
+
+const arr = ['Vlad', 'Toka', 'Lena', 'Bob', 'Lok', 'Eli','Joil']
+
+
+arr.forEach((element, index) => {
+    console.log(index, element)
+})
+
+const arrNG = [1, 2, 3, 4, 5]
+
+const arrNGNew = arrNG.reduce((acc, element) => {
+ return acc + element
+
+})
+
+console.log(arrNGNew) // 15
+
+
+
+
+
+const myObect = {
+    name: 'Vlad',
+    age: 23,
+    city: 'Sofia'
+}
+
+
+for(const key in myObect) {
+    console.log(key, myObect[key])
+}
+
+
+Object.values(myObect).forEach((value) => {
+    console.log(value)
+})
+
+const arrNG2 = [1, 2, 3, 4, 5]
+
+const arrNG2New = arrNG2.reduce((acc, element) => {
+   return element + acc
+}
+)
+
+console.log(arrNG2New)
+
+
+

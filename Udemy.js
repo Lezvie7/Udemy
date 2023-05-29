@@ -326,7 +326,7 @@ const a = 10
 // Переменная a ТИПА число ПРИМИТИВ!!!!
 
 let b = a
-// Обьявили новую переменную let b И КРАИРУЕМ a В b
+// Обьявили новую переменную let b И КОПИРУЕМ a В b
 
 b = 30
 // 
@@ -3445,6 +3445,17 @@ myArray19.forEach(element => {
 //////////////////////////////   КЛАССЫ И ПРОТОТИПЫ !!!   //////////////////////////////
 
 
+
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+}
 
 
 
