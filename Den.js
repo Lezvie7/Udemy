@@ -113,3 +113,19 @@ for (const prop in obj) {
   // Доступ к каждому свойству объекта
   console.log(prop, obj[prop]);
 }
+
+//////////////////// FOR .....OF......LOOP///////
+const iterable = [10, 20, 30];
+
+for (let value of iterable) {
+  value += 1;
+  console.log(value);
+}
+// 11
+// 21
+// 31
+
+
+
+
+
