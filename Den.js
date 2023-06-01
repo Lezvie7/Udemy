@@ -113,3 +113,12 @@ for (const prop in obj) {
   // Доступ к каждому свойству объекта
   console.log(prop, obj[prop]);
 }
+
+
+Писал проверку на пароль через &&
+  
+const password = 555;
+let currentPassword = 898;
+let message = (password === currentPassword) && 'Пароль верный' || 'Пароль НЕ верный!';
+console.log(message);
+// Интересно получилось
