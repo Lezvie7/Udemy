@@ -171,4 +171,4 @@ for (let key in currentContacts) {
 }
 }
 
-console.log(lookUpProfile("Kristian", "likes"))
+console.log(lookUpProfile("Kristian", "number"))

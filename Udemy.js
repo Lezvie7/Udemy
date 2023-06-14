@@ -3531,7 +3531,7 @@ const contacts = [
   }
 }
   
-console.log(lookUpProfile("Kristian", "likes"))
+console.log(lookUpProfile("Sherlock", "number"))
 
 
 
