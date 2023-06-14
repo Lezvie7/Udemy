@@ -253,6 +253,8 @@ Object.values(myObect).forEach((value) => {
 
 const arrNG2 = [1, 2, 3, 4, 5]
 
+
+
 const arrNG2New = arrNG2.reduce((acc, element) => {
    return element + acc
 }
@@ -260,5 +262,34 @@ const arrNG2New = arrNG2.reduce((acc, element) => {
 
 console.log(arrNG2New)
 
+
+const assNew = [1, 2, 3, 4]
+
+
+function checkForProperty(object, property) {
+    return object.hasOwnProperty(property);
+  }
+  console.log(checkForProperty({ top: 'hat', bottom: 'pants' }, 'top')) // true
+  console.log(checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle')) // false
+
+  
+
+//    Заміна циклів за допомогою рекурсії
+  // Базовий випадок: якщо n рівне 0, сума дорівнює 0
+  // Рекурсивний випадок: обчислення суми перших n-1 елементів та додавання останнього елемента arr[n-1]
+
+  function sum(arr, n) {
+    // Змініть код лише під цим рядком
+  if (n === 0) {
+        return 0;
+      } else {
+        return sum(arr, n - 1) + arr[n - 1];
+      }
+    // Змініть код лише над цим рядком
+  }
+
+console.log(sum([1, 2, 3, 4, 5], 3))
+
+// Наприклад, якщо ми викличемо функцію sum([1, 2, 3, 4, 5], 3), вона поверне 6, оскільки сума перших трьох елементів [1, 2, 3] дорівнює 6.
 
 

@@ -115,7 +115,7 @@ const myCity ={
 }
 
 myCity['popular'] = true
-// Добавили в обьектс помощью [] свойство popular:  значение true.
+// Добавили в обьект с помощью [] свойство popular:  значение true.
 
 console.log(myCity)
 // { city: 'New York', popular: true }
@@ -3441,6 +3441,29 @@ myArray19.forEach(element => {
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//    Заміна циклів за допомогою рекурсії
+  // Базовий випадок: якщо n рівне 0, сума дорівнює 0
+  // Рекурсивний випадок: обчислення суми перших n-1 елементів та додавання останнього елемента arr[n-1]
+
+  function sum(arr, n) {
+    // Змініть код лише під цим рядком
+  if (n === 0) {
+        return 0;
+      } else {
+        return sum(arr, n - 1) + arr[n - 1];
+      }
+    // Змініть код лише над цим рядком
+  }
+
+console.log(sum([1, 2, 3, 4, 5], 3))
+
+// Наприклад, якщо ми викличемо функцію sum([1, 2, 3, 4, 5], 3), вона поверне 6, оскільки сума перших трьох елементів [1, 2, 3] дорівнює 6.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 //////////////////////////////   КЛАССЫ И ПРОТОТИПЫ !!!   //////////////////////////////
 
@@ -3459,3 +3482,381 @@ class Comment {
 
 
 
+const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+
+
+
+
+
+  function lookUpProfile(name, prop) {
+    // Змініть код лише під цим рядком
+  for (let i = 0; i < contacts.length; i += 1) {
+          let currentContacts = contacts[i];
+  for (let key in currentContacts) {
+
+          if (name === currentContacts.firstName && prop === key) {
+
+        return currentContacts[prop];
+
+          }
+         
+
+        }
+    // Змініть код лише над цим рядком
+  }
+}
+  
+console.log(lookUpProfile("Kristian", "likes"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   function lookUpProfile(name, prop) {
+//     // Змініть код лише під цим рядком
+//   for (let i = 0; i < contacts.length; i += 1) {
+//           let currentContacts = contacts[i];
+//   for (let key in currentContacts) {
+
+//           if (name === currentContacts.firstName && prop === key) {
+
+//         return currentContacts[prop];
+
+//             } else if (name !== currentContacts.firstName) {
+//                 return "No such contact";
+//             } else if (prop !== key) {
+
+//                 return "No such property";
+        
+//                     } 
+//           }
+         
+
+//         }
+//     // Змініть код лише над цим рядком
+//   }
+  
+// console.log(lookUpProfile("Akira", "likes"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     function lookUpProfile(name, prop) {
+//       for (let i = 0; i < contacts.length; i += 1) {
+//         let currentContacts = contacts[i];
+
+//         for (let key in currentContacts) {
+//           if (name === currentContacts.firstName && prop === key) {
+//             return currentContacts[prop];
+//           } else if (name !== currentContacts.firstName) {
+//             return "No such contact";
+//           }
+//         }
+//       }
+//     }
+
+
+
+
+// lookUpProfile("Akira", "likes");
+
+// lookUpProfile("Kristian", "likes");
+
+
+
+
+
+
+// lookUpProfile("Akira", "likes");
+
+
+// lookUpProfile("Akira", "likes");
+
+
+// function lookUpProfile(name, prop) {
+//     // Змініть код лише під цим рядком
+//     for (contact of contacts) {
+//   if (name === contact.firstName) {
+//  console.log('Пашет!!!')
+//   }
+//     }
+// }
+
+
+
+lookUpProfile("Akira", "likes");
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     function lookUpProfile(name, prop) {
+
+//     for (let i = 0; i < contacts.length; i +=1) {
+
+//         let currentContacts = contacts[i];
+                
+//         if(name === currentContacts.firstName) {
+//                 console.log('Пашет!!!')
+//         } else {
+//             console.log('НЕ ПАШЕТ')
+//         }
+                
+//     }
+                
+// }
+
+
+// lookUpProfile("Akira", "likes");
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     function lookUpProfile(name, prop) {
+
+//     for(let i = 0; i < contacts.length; i +=1) {
+
+//         let currentContacts = contacts[i];
+                
+//         if(name === currentContacts.firstName) {
+//                 console.log('Пашет!!!')
+//         } else {
+//             console.log('НЕ ПАШЕТ')
+//         }
+                
+//     }
+                
+// }
+
+// lookUpProfile('Akira');
+
+
+
+
+
+
+
+
+// 
+
+
+
+
+// function lookUpProfile(name, prop) {
+//     // Змініть код лише під цим рядком
+//     for (contact of contacts) {
+//   if (name === contact.firstName) {
+//  console.log('Пашет!!!')
+//   }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  for (contact of contacts) {
+    console.log(contact['firstName']);
+}
+
+
+  for (contact of contacts) {
+    console.log(contact.firstName);
+}
+
+
+
+for (contact of contacts) {
+    console.log(contact.firstName + ' ' + contact.lastName);
+}
+
+
+
+
+
+
+  console.log(contacts[0].firstName)
+
+
+  const arrObjContacts = contacts["firstName"]
+
+
+  console.log(arrObjContacts)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   function lookUpProfile(name, prop) {
+//     // Змініть код лише під цим рядком
+//   for (let i = 0; i < contacts.length; i += 1) {
+//           let currentContacts = contacts[i];
+//   for (let key in currentContacts) {
+
+//           if (name === currentContacts.firstName && prop === key) {
+
+//         return currentContacts[prop];
+
+//             } else if (name !== currentContacts.firstName) {
+
+//         return "No such contact";
+
+//             } else if (prop !== key) {
+
+//         return "No such property";
+//             }
+//           }
+//         }
+//     // Змініть код лише над цим рядком
+//   }
+  
+// console.log(lookUpProfile("Akira", "likes"))
+
+
+
+
+
+
+//   function lookUpProfile(name, prop) {
+
+//     for (let i = 0; i < contacts.length; i +=1) {
+
+//         let currentContacts = contacts[i];
+                
+//         for (let key in currentContacts) {
+//       if (name === currentContacts.firstName && prop === key) {
+
+//         console.log(currentContacts[prop])
+//         }
+                
+//     }
+                
+// }
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function lookUpProfile(name, prop) {
+
+//     for (let i = 0; i < contacts.length; i +=1) {
+
+//         let currentContacts = contacts[i];
+                
+//         for (let key in currentContacts) {
+//       if (name === currentContacts.firstName && prop === key) {
+
+//         return currentContacts[prop]
+//         } 
+                
+//     }
+                
+// }
+
+// }
