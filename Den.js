@@ -251,5 +251,17 @@ function checkScope() {
   return i;
 }
 
+const authority = [
+{name: 'umg'}
+]
 
+ 
+const generator = function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+}
+
+const pub = generator === 5 ? 'норма' : 'no'
+console.log(pub)
 
