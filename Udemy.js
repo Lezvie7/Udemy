@@ -3465,13 +3465,16 @@ console.log(sum([1, 2, 3, 4, 5], 3))
 
 
 
+
+
+
 //////////////////////////////   КЛАССЫ И ПРОТОТИПЫ !!!   //////////////////////////////
 
 
 
 class Comment {
-    constructor(text) {
-        this.text = text
+    constructor(test) {
+        this.text = test
         this.votesQty = 0
     }
 
@@ -3480,383 +3483,126 @@ class Comment {
     }
 }
 
+const firstComment = new Comment('First comment')
+const secondComment = new Comment('Second comment')
+const thirdComment = new Comment('Third comment')
 
-
-const contacts = [
-    {
-      firstName: "Akira",
-      lastName: "Laine",
-      number: "0543236543",
-      likes: ["Pizza", "Coding", "Brownie Points"],
-    },
-    {
-      firstName: "Harry",
-      lastName: "Potter",
-      number: "0994372684",
-      likes: ["Hogwarts", "Magic", "Hagrid"],
-    },
-    {
-      firstName: "Sherlock",
-      lastName: "Holmes",
-      number: "0487345643",
-      likes: ["Intriguing Cases", "Violin"],
-    },
-    {
-      firstName: "Kristian",
-      lastName: "Vos",
-      number: "unknown",
-      likes: ["JavaScript", "Gaming", "Foxes"],
-    },
-  ];
+// С помощью "hasOwnProperty" можно пороверить есть ли собственное свойство 'text' в обьекта firstComment.
+console.log(firstComment.hasOwnProperty('text'))
+console.log(firstComment.hasOwnProperty('votesQty'))
+console.log(firstComment.hasOwnProperty('upvote'))
+console.log(firstComment.hasOwnProperty('hasOwnProperty'))
 
 
 
 
 
-  function lookUpProfile(name, prop) {
-    // Змініть код лише під цим рядком
-  for (let i = 0; i < contacts.length; i += 1) {
-          let currentContacts = contacts[i];
-  for (let key in currentContacts) {
+//////////////////////////////   СТАТИЧЕСКИЕ МЕТОДЫ !!!   //////////////////////////////
 
-          if (name === currentContacts.firstName && prop === key) {
+// Конструктор для создания новго экземпляров - бьекта! Создаст новый обьект с свойством text: значение 'test' и свойство votesQty: значение 0
+class Comment {
+    constructor(test) {
+        this.text = test
+        this.votesQty = 0
+    }
+// upvote() будет наследоваться всеми экземплярами! То есть во всех новых обьетах будет доступен прототип upvote().
+    upvote() { 
+        this.votesQty += 1
+    }
 
-        return currentContacts[prop];
-
-          }
-         
-
-        }
-    // Змініть код лише над цим рядком
-  }
+    // Метод static доступен как свойство класса и не наследуются экземплярами класса.
+    // Они доступны как методы конкретного класса!!! То есть только при обращении к класу это свойство доступно.
+    static mergeComment(first, second) {
+        return `${first} ${second}`
+    }
 }
-  
-console.log(lookUpProfile("Sherlock", "number"))
+// Объединяет две строки.
 
 
+console.log(Comment.mergeComment('First comment.', 'Second comment.'))
 
 
 
 
 
 
+//////////////////////////////   РАСШИРЕНИЕ ДРУГИХ КЛАССОВ !!!   //////////////////////////////
 
+// Создаем метод который будет доступен всем массивам!
 
-
-
-
-
-
-
-
-
-
-
-
-
-//   function lookUpProfile(name, prop) {
-//     // Змініть код лише під цим рядком
-//   for (let i = 0; i < contacts.length; i += 1) {
-//           let currentContacts = contacts[i];
-//   for (let key in currentContacts) {
-
-//           if (name === currentContacts.firstName && prop === key) {
-
-//         return currentContacts[prop];
-
-//             } else if (name !== currentContacts.firstName) {
-//                 return "No such contact";
-//             } else if (prop !== key) {
-
-//                 return "No such property";
-        
-//                     } 
-//           }
-         
-
-//         }
-//     // Змініть код лише над цим рядком
-//   }
-  
-// console.log(lookUpProfile("Akira", "likes"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     function lookUpProfile(name, prop) {
-//       for (let i = 0; i < contacts.length; i += 1) {
-//         let currentContacts = contacts[i];
-
-//         for (let key in currentContacts) {
-//           if (name === currentContacts.firstName && prop === key) {
-//             return currentContacts[prop];
-//           } else if (name !== currentContacts.firstName) {
-//             return "No such contact";
-//           }
-//         }
-//       }
-//     }
-
-
-
-
-// lookUpProfile("Akira", "likes");
-
-// lookUpProfile("Kristian", "likes");
-
-
-
-
-
-
-// lookUpProfile("Akira", "likes");
-
-
-// lookUpProfile("Akira", "likes");
-
-
-// function lookUpProfile(name, prop) {
-//     // Змініть код лише під цим рядком
-//     for (contact of contacts) {
-//   if (name === contact.firstName) {
-//  console.log('Пашет!!!')
-//   }
-//     }
-// }
-
-
-
-lookUpProfile("Akira", "likes");
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     function lookUpProfile(name, prop) {
-
-//     for (let i = 0; i < contacts.length; i +=1) {
-
-//         let currentContacts = contacts[i];
-                
-//         if(name === currentContacts.firstName) {
-//                 console.log('Пашет!!!')
-//         } else {
-//             console.log('НЕ ПАШЕТ')
-//         }
-                
-//     }
-                
-// }
-
-
-// lookUpProfile("Akira", "likes");
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     function lookUpProfile(name, prop) {
-
-//     for(let i = 0; i < contacts.length; i +=1) {
-
-//         let currentContacts = contacts[i];
-                
-//         if(name === currentContacts.firstName) {
-//                 console.log('Пашет!!!')
-//         } else {
-//             console.log('НЕ ПАШЕТ')
-//         }
-                
-//     }
-                
-// }
-
-// lookUpProfile('Akira');
-
-
-
-
-
-
-
-
-// 
-
-
-
-
-// function lookUpProfile(name, prop) {
-//     // Змініть код лише під цим рядком
-//     for (contact of contacts) {
-//   if (name === contact.firstName) {
-//  console.log('Пашет!!!')
-//   }
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  for (contact of contacts) {
-    console.log(contact['firstName']);
+class NumbersArray extends Array {
+    sum() {
+        return this.reduce((el, acc) => acc += el, 0 )
+    }
 }
 
+const newmyArray = new NumbersArray(2, 5, 7)
 
-  for (contact of contacts) {
-    console.log(contact.firstName);
+console.log(newmyArray) // Массив [ 2, 5, 7 ]
+console.log(newmyArray.sum()) // Сумма числе 14
+
+
+
+
+
+
+
+
+//////////////////////////////   ПРОМИСЫ !!!   //////////////////////////////
+
+
+// fetch('https://jsonplaceholder.typicode.com/todos')
+// .then(response => response.json())
+// .then(json => console.log(json))
+// .catch(error => console.error(error))
+
+
+fetch('https://jsonplaceholder.typicode.com/todos')
+.then(response => response.json())
+.then(json => console.log(json))
+.catch(error => console.log(error.massage))
+
+
+
+// Функция которая упрощает создание прописа, чтобы два раза не вызывать .then и не создавать 2 промиса.
+const getData = (url) =>
+new Promise ((resolve, reject) =>
+fetch(url)
+.then(response => response.json())
+.then(json => resolve(json))
+.catch(error => reject(error))
+)
+
+getData('https://jsonplaceholder.typicode.com/todos')
+.then(data => console.log(data))
+.catch(error => console.log(error.massage))
+
+
+
+
+
+////////////////////////////// (Асинхронные функции)  ASYNC/AWAIT !!!   //////////////////////////////
+
+// ASYNC/AWAIT Это специальный синтаксис для упрощения работы с прописамию
+
+
+// Асинхронная функция, вместо undefined или другого значения всегда возвращает промис!
+
+// Пример function asyncFN()
+async function asyncFN() {
+    // Всегда возвращает Промис!
+}
+
+// Пример Стрелка
+const asyncFn2 = async () => {
+    // Всегда возвращает Промис!
 }
 
 
 
-for (contact of contacts) {
-    console.log(contact.firstName + ' ' + contact.lastName);
+const asyncFn = async () => {
+    return 'Success'
 }
 
-
-
-
-
-
-  console.log(contacts[0].firstName)
-
-
-  const arrObjContacts = contacts["firstName"]
-
-
-  console.log(arrObjContacts)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   function lookUpProfile(name, prop) {
-//     // Змініть код лише під цим рядком
-//   for (let i = 0; i < contacts.length; i += 1) {
-//           let currentContacts = contacts[i];
-//   for (let key in currentContacts) {
-
-//           if (name === currentContacts.firstName && prop === key) {
-
-//         return currentContacts[prop];
-
-//             } else if (name !== currentContacts.firstName) {
-
-//         return "No such contact";
-
-//             } else if (prop !== key) {
-
-//         return "No such property";
-//             }
-//           }
-//         }
-//     // Змініть код лише над цим рядком
-//   }
-  
-// console.log(lookUpProfile("Akira", "likes"))
-
-
-
-
-
-
-//   function lookUpProfile(name, prop) {
-
-//     for (let i = 0; i < contacts.length; i +=1) {
-
-//         let currentContacts = contacts[i];
-                
-//         for (let key in currentContacts) {
-//       if (name === currentContacts.firstName && prop === key) {
-
-//         console.log(currentContacts[prop])
-//         }
-                
-//     }
-                
-// }
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function lookUpProfile(name, prop) {
-
-//     for (let i = 0; i < contacts.length; i +=1) {
-
-//         let currentContacts = contacts[i];
-                
-//         for (let key in currentContacts) {
-//       if (name === currentContacts.firstName && prop === key) {
-
-//         return currentContacts[prop]
-//         } 
-                
-//     }
-                
-// }
-
-// }
+asyncFn()
+.then(value => console.log(value))

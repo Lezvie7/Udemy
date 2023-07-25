@@ -293,3 +293,180 @@ console.log(sum([1, 2, 3, 4, 5], 3))
 // Наприклад, якщо ми викличемо функцію sum([1, 2, 3, 4, 5], 3), вона поверне 6, оскільки сума перших трьох елементів [1, 2, 3] дорівнює 6.
 
 
+
+
+
+
+// Пошук профілю
+// У нас є масив об'єктів, які представляють різних людей зі списку контактів.
+
+// Функція lookUpProfile, яка приймає name та властивість (prop) як аргументи, вже записана для вас.
+
+// Функція повинна перевірити, чи name дійсно є ім’ям (firstName) контакту і надана властивість (prop) є властивістю цього контакту.
+
+// Якщо обидва є істинними, то поверніть значення цієї власності.
+
+// Якщо name не відповідає жодному контакту, поверніть рядок No such contact.
+
+// Якщо prop не збігається з жодною дійсною властивістю контакту, що відповідає name, поверніть рядок No such property.
+
+const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+
+
+
+  function lookUpProfile(name, prop) {
+
+  for (let i = 0; i < contacts.length; i += 1) {
+          let currentContacts = contacts[i];
+
+    for (let key in currentContacts) {
+     if (name === currentContacts.firstName && prop === key) {
+        return currentContacts[prop];
+          } 
+        }
+
+        for (let key in currentContacts) {
+        if (name === currentContacts.firstName && prop !== key) {
+            return 'No such property'
+          }
+        }
+
+  } 
+
+  if (name !== contacts.firstName) {
+                 return "No such contact"; 
+               } 
+}
+
+console.log(lookUpProfile("Akira", "likes"))
+
+
+
+
+
+
+
+
+function checkSign(num) {
+    return (num++) ? 'positive' 
+    : (num--) ? 'negative'
+    : 'zero';
+}
+   console.log(checkSign(10))
+
+
+
+   const arrTest44 = [1, 34, 56, 45,34,56]
+
+  const arrTest44Sum = arrTest44.reduce((acc, element) => {
+return element + acc
+  })
+
+  console.log(arrTest44Sum)
+
+
+
+
+
+
+  function countup(n) {
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.unshift(n);
+      return countArray;
+    }
+  }
+  console.log(countup(5));
+
+
+
+
+  const myObect77 = {
+    name: 'Vlad',
+    age: 28,
+    city: 'New York'
+  }
+
+
+for (key in myObect77) {
+  console.log(key, myObect77[key])
+}
+
+//////////////////////////////   КЛАССЫ И ПРОТОТИПЫ !!!   //////////////////////////////
+
+
+// Класс голосование за лучшего игрока!!!
+class MyCard {
+constructor(user, city) {
+this.user = user
+this.city = city
+this.likes = 0
+
+  }
+// Проголосовать за игрока!
+  voice() {
+    console.log(`You have a new like from ${this.user}, from ${this.city}`)
+    this.likes += 1
+    // alert(`You have a new like from ${this.user}, from ${this.city}`)
+  }
+// Проверить время и дату.
+  static time() {
+    return Date()
+  }
+
+}
+
+// Список игроков каждый из которых будет объект.
+const Kevin = new MyCard('Kevin', 'USA')
+const Bob = new MyCard('Bob', 'New York')
+const Jony = new MyCard('Jony', 'Los Angeles')
+
+// Консолим всех игроков
+console.log(Kevin)
+console.log(Bob)
+console.log(Jony)
+
+
+// Голосуем за Bob.
+Bob.voice()
+// Провреяем голос Boba.
+console.log(Bob)
+
+// Провреяем время дату.
+MyCard.time()
+
+
+
+
+
+
+
+
+
