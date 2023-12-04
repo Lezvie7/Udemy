@@ -3550,6 +3550,12 @@ console.log(newmyArray.sum()) // Сумма числе 14
 
 //////////////////////////////   ПРОМИСЫ !!!   //////////////////////////////
 
+// Получаем данные от сервера, эти данные конвертируем в json и json конвертируем в JS объект допустим массивов. 
+fetch('https://jsonplaceholder.typicode.com/todos/55')
+.then(response => response.json())
+.then(json => console.log(json))
+.catch(error => console.error(error))
+
 
 // fetch('https://jsonplaceholder.typicode.com/todos')
 // .then(response => response.json())
@@ -3583,7 +3589,7 @@ getData('https://jsonplaceholder.typicode.com/todos')
 
 ////////////////////////////// (Асинхронные функции)  ASYNC/AWAIT !!!   //////////////////////////////
 
-// ASYNC/AWAIT Это специальный синтаксис для упрощения работы с прописамию
+// ASYNC/AWAIT Это специальный синтаксис для упрощения работы с прописами
 
 
 // Асинхронная функция, вместо undefined или другого значения всегда возвращает промис!
