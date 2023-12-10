@@ -71,3 +71,6 @@ console.log(quantitiesByCategories(inputProducts))
 
 // console.log(quantitiesByCategories(inputProducts))
 
+
+dfdfd
+
