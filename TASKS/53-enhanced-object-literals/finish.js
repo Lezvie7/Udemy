@@ -52,3 +52,13 @@ setTimeout(() => myDogPhoto.publishInfo(), 2000)
 
 console.log(myDogPhoto[testDimension1]) // true
 console.log(myDogPhoto[testDimension2]) // undefined
+
+
+
+
+const arr = [12, 34, 56, 67, 45]
+
+
+const rest = arr.reduce((acc, elm) => acc += elm)
+
+console.log(rest)

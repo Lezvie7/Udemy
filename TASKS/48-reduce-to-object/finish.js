@@ -36,16 +36,16 @@ const inputProducts = [
 
 
 const quantitiesByCategories = (products) => {
-  return products.reduce((acc, elem) => {
-    if (elem.quantity === elem.quantity) {
-      acc[elem.category] = elem.quantity += elem.quantity
-    } else {
-      acc[elem.category] = elem.quantity
-    }
+  return products.reduce((acc, el) => {
+
+acc[el.category] =
+(acc[el.category] || 0) + el.quantity
+
         return acc
 }, {})}
 
 console.log(quantitiesByCategories(inputProducts))
+
 
 
 
@@ -59,18 +59,5 @@ console.log(quantitiesByCategories(inputProducts))
 
 
 
-// const quantitiesByCategories = (products) => {
-//   return products.reduce((acc, elem) => {
-//     if (elem.category === elem.category) {
-//      acc[elem.category] = elem.quantity
-//     } else {
-//      acc[elem.category] = elem.quantity
-//     }
-//         return acc
-// }, {})}
 
-// console.log(quantitiesByCategories(inputProducts))
-
-
-dfdfd
 
